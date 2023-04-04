@@ -1,22 +1,13 @@
-Shader "Longsl/Chapter 02/StandardDiffuse"
+Shader "Longsl/Chapter 02/ParameterExample"
 {
     // 从技术上讲，这是一个基于物理渲染（PBR）的Surface Shader。顾名思义，这种类型的着色器通过模拟光线在击中物体时的物理行为来实现真实感。
     Properties
     {
+        _Color ("Color", Color) = (1,1,1,1)
         _AmbientColor("Ambient Color", Color) = (1,1,1,1)
         _Glossiness ("Smoothness", Range(0,1)) = 0.5
         _Metallic ("Metallic", Range(0,1)) = 0.0
-        
-        _Range ("This is a Slider", Range(0,10)) = 2.5
-        _Color ("This is a Color", Color) = (1,1,1,1)
-        _2D ("This is a 2D", 2D) = ""
-        _3D ("This is a 2D", 3D) = ""
-        _Rect ("This is a Rect", Rect) = ""
-        _Cube ("This is a Cube", Cube) = ""
-        _float ("This is a float", float) = 1.0
-        _Vector ("This is a Vector", Vector) = (1,1,1)
-        _int ("This is a int", int) = 1
-        
+        _MySliderValue ("This is a Slider", Range(0,10)) = 2.5
     }
     SubShader
     {
@@ -43,6 +34,8 @@ Shader "Longsl/Chapter 02/StandardDiffuse"
         half _Glossiness;
         half _Metallic;
         fixed4 _Color;
+        float4 _AmbientColor;
+        float _MySliderValue;
 
         // Add instancing support for this shader. You need to check 'Enable Instancing' on materials that use the shader.
         // See https://docs.unity3d.com/Manual/GPUInstancing.html for more information about instancing.
@@ -54,7 +47,7 @@ Shader "Longsl/Chapter 02/StandardDiffuse"
         void surf(Input IN, inout SurfaceOutputStandard o)
         {
             // Albedo comes from a texture tinted by color
-            fixed4 c = _Color;
+            fixed4 c = pow((_Color + _AmbientColor), _MySliderValue);
             o.Albedo = c.rgb;
             // Metallic and smoothness come from slider variables
             o.Metallic = _Metallic;

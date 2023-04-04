@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: StandardDiffuse
-  m_Shader: {fileID: 4800000, guid: 732bdb28895604ef59e1113c898500cc, type: 3}
+  m_Name: SimpleDiffuse
+  m_Shader: {fileID: 4800000, guid: 64038e3b264f41a418431adfd8e2cc13, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -19,19 +19,7 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - _2D:
-        m_Texture: {fileID: 2800000, guid: d20e5329bb2905844a1ae38b80640d3f, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _3D:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - _BumpMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Cube:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -67,10 +55,6 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _Rect:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
     - _BumpScale: 1
@@ -82,20 +66,14 @@ Material:
     - _GlossyReflections: 1
     - _Metallic: 0
     - _Mode: 0
-    - _MySliderValue: 5.33
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _Range: 2.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _UVSec: 0
     - _ZWrite: 1
-    - _float: 2.08
-    - _int: 1
     m_Colors:
-    - _AmbientColor: {r: 0.9433962, g: 0.6541474, b: 0.6541474, a: 1}
-    - _Color: {r: 0.509434, g: 0.509434, b: 0.509434, a: 1}
+    - _Color: {r: 1, g: 0.23018867, b: 0.23018867, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _Vector: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []

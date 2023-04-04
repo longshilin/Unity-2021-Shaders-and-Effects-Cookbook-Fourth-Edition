@@ -1,4 +1,4 @@
-Shader "Longsl/Chapter 02/StandardDiffuse"
+Shader "Longsl/Chapter 02/StandardColor"
 {
     // 从技术上讲，这是一个基于物理渲染（PBR）的Surface Shader。顾名思义，这种类型的着色器通过模拟光线在击中物体时的物理行为来实现真实感。
     Properties

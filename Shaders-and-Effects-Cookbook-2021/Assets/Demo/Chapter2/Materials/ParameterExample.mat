@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: StandardDiffuse
-  m_Shader: {fileID: 4800000, guid: 732bdb28895604ef59e1113c898500cc, type: 3}
+  m_Name: ParameterExample
+  m_Shader: {fileID: 4800000, guid: 5968f5d50f96fa24a958a95c54e05d40, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -80,9 +80,9 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _Metallic: 0
+    - _Metallic: 0.64
     - _Mode: 0
-    - _MySliderValue: 5.33
+    - _MySliderValue: 1.7
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _Range: 2.5
@@ -94,8 +94,8 @@ Material:
     - _float: 2.08
     - _int: 1
     m_Colors:
-    - _AmbientColor: {r: 0.9433962, g: 0.6541474, b: 0.6541474, a: 1}
-    - _Color: {r: 0.509434, g: 0.509434, b: 0.509434, a: 1}
+    - _AmbientColor: {r: 0.6415094, g: 0.5773585, b: 0.5773585, a: 1}
+    - _Color: {r: 0, g: 0, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _Vector: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
