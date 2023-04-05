@@ -1,29 +1,15 @@
-Shader "Longsl/Chapter 02/StandardDiffuse"
+Shader "Longsl/Chapter 04/TexturedShader"
 {
-    // 从技术上讲，这是一个基于物理渲染（PBR）的Surface Shader。顾名思义，这种类型的着色器通过模拟光线在击中物体时的物理行为来实现真实感。
     Properties
     {
-        _AmbientColor("Ambient Color", Color) = (1,1,1,1)
+        _Color ("Color", Color) = (1,1,1,1)
+        _MainTex ("Albedo (RGB)", 2D) = "white" {}
         _Glossiness ("Smoothness", Range(0,1)) = 0.5
         _Metallic ("Metallic", Range(0,1)) = 0.0
-        
-        _Range ("This is a Slider", Range(0,10)) = 2.5
-        _Color ("This is a Color", Color) = (1,1,1,1)
-        _2D ("This is a 2D", 2D) = ""
-        _3D ("This is a 2D", 3D) = ""
-        _Rect ("This is a Rect", Rect) = ""
-        _Cube ("This is a Cube", Cube) = ""
-        _float ("This is a float", float) = 1.0
-        _Vector ("This is a Vector", Vector) = (1,1,1)
-        _int ("This is a int", int) = 1
-        
     }
     SubShader
     {
-        Tags
-        {
-            "RenderType"="Opaque"
-        }
+        Tags { "RenderType"="Opaque" }
         LOD 200
 
         CGPROGRAM
@@ -48,15 +34,15 @@ Shader "Longsl/Chapter 02/StandardDiffuse"
         // See https://docs.unity3d.com/Manual/GPUInstancing.html for more information about instancing.
         // #pragma instancing_options assumeuniformscaling
         UNITY_INSTANCING_BUFFER_START(Props)
-        // put more per-instance properties here
+            // put more per-instance properties here
         UNITY_INSTANCING_BUFFER_END(Props)
 
-        void surf(Input IN, inout SurfaceOutputStandard o)
+        void surf (Input IN, inout SurfaceOutputStandard o)
         {
             // Albedo comes from a texture tinted by color
-            fixed4 c = _Color;
+            fixed4 c = tex2D (_MainTex, IN.uv_MainTex) * _Color;
             o.Albedo = c.rgb;
-            // 'Metallic and smoothness come from slider variables
+            // Metallic and smoothness come from slider variables
             o.Metallic = _Metallic;
             o.Smoothness = _Glossiness;
             o.Alpha = c.a;
